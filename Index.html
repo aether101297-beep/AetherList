@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AetherList</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fa;
+color:#222;
+}
+header{
+position:sticky;
+top:0;
+background:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+z-index:999;
+}
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+nav a{
+text-decoration:none;
+color:#444;
+margin-left:18px;
+font-weight:bold;
+}
+.hero{
+text-align:center;
+padding:70px 20px;
+background:white;
+}
+.hero h1{
+font-size:55px;
+}
+.hero p{
+color:#666;
+margin:10px 0 25px;
+}
+.btn{
+background:black;
+color:white;
+padding:12px 24px;
+border-radius:12px;
+text-decoration:none;
+display:inline-block;
+}
+.container{
+max-width:1050px;
+margin:auto;
+padding:20px;
+}
+.card{
+background:white;
+border-radius:18px;
+padding:18px;
+margin-bottom:20px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+transition:.25s;
+}
+.card:hover{
+transform:translateY(-4px);
+}
+.search{
+width:100%;
+padding:15px;
+border-radius:12px;
+border:1px solid #ddd;
+margin-bottom:15px;
+}
+.filter button{
+padding:10px 18px;
+margin:4px;
+border:none;
+background:#ececec;
+border-radius:10px;
+cursor:pointer;
+}
+.level{
+display:flex;
+gap:15px;
+align-items:center;
+}
+.level img{
+width:110px;
+height:70px;
+object-fit:cover;
+border-radius:10px;
+}
+.rank{
+font-size:22px;
+font-weight:bold;
+width:50px;
+text-align:center;
+}
+.tag{
+display:inline-block;
+padding:5px 10px;
+background:#eee;
+border-radius:8px;
+font-size:13px;
+margin-top:8px;
+}
+table{
+width:100%;
+border-collapse:collapse;
+}
+th,td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+}
+.form input,.form textarea,.form select{
+width:100%;
+padding:12px;
+margin-top:6px;
+margin-bottom:14px;
+border-radius:10px;
+border:1px solid #ddd;
+}
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+}
+@media(max-width:700px){
+.hero h1{font-size:38px;}
+.level{
+flex-direction:column;
+align-items:flex-start;
+}
+.level img{
+width:100%;
+height:170px;
+}
+.rank{
+width:auto;
+}
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<div class="logo">AetherList</div>
+<nav>
+<a href="#top">Top</a>
+<a href="#legacy">Legacy</a>
+<a href="#upcoming">Upcoming</a>
+<a href="#leaderboard">Leaderboard</a>
+<a href="#submit">Submit</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>AetherList</h1>
+<p>Community Geometry Dash Level List</p>
+<a class="btn" href="#submit">Submit Level</a>
+</section>
+
+<div class="container">
+
+<input class="search" placeholder="Search level, creator, ID...">
+
+<div class="filter">
+<button>All</button>
+<button>Easy</button>
+<button>Hard</button>
+<button>Extreme</button>
+</div>
+
+<h2 id="top">🏆 Top List</h2>
+
+<div class="card">
+<div class="level">
+<div class="rank">#1</div>
+<AsyncImage query="Geometry Dash blue neon level thumbnail" aspectRatio="16:10" maxWidth=110/>
+<div>
+<h3>Chaos Twilight</h3>
+<p>Extreme Demon • Aetherchrome</p>
+<span class="tag">Verified</span>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="level">
+<div class="rank">#2</div>
+<AsyncImage query="Geometry Dash candy theme level thumbnail" aspectRatio="16:10" maxWidth=110/>
+<div>
+<h3>Candyrush</h3>
+<p>Hard Demon • Aetherchrome</p>
+<span class="tag">Verified</span>
+</div>
+</div>
+</div>
+
+<h2 id="legacy">📜 Legacy List</h2>
+
+<div class="card">
+<div class="level">
+<div class="rank">L</div>
+<AsyncImage query="Geometry Dash grayscale level thumbnail" aspectRatio="16:10" maxWidth=110/>
+<div>
+<h3>Legacy Example</h3>
+<p>Old ranked level</p>
+</div>
+</div>
+</div>
+
+<h2 id="upcoming">🚧 Upcoming</h2>
+
+<div class="card">
+<div class="level">
+<div class="rank">U</div>
+<AsyncImage query="Geometry Dash white blue upcoming level thumbnail" aspectRatio="16:10" maxWidth=110/>
+<div>
+<h3>Ruby</h3>
+<p>In Development</p>
+</div>
+</div>
+</div>
+
+<h2 id="leaderboard">🏅 Leaderboard</h2>
+
+<div class="card">
+<table>
+<tr><th>Rank</th><th>Player</th><th>Points</th></tr>
+<tr><td>#1</td><td>Aetherchrome</td><td>1250</td></tr>
+<tr><td>#2</td><td>Zenith</td><td>980</td></tr>
+<tr><td>#3</td><td>Cozy</td><td>760</td></tr>
+</table>
+</div>
+
+<h2>🔔 Notification Preview</h2>
+
+<div class="card">
+<h3>Level Accepted</h3>
+<p>Your level <b>Chaos Twilight</b> has been accepted into AetherList.</p>
+</div>
+
+<h2 id="submit">📤 Submit Level</h2>
+
+<div class="card form">
+
+<label>Level Name</label>
+<input placeholder="Level Name">
+
+<label>Creator</label>
+<input placeholder="Creator">
+
+<label>Level ID</label>
+<input placeholder="Level ID">
+
+<label>Difficulty</label>
+<select>
+<option>Easy Demon</option>
+<option>Medium Demon</option>
+<option>Hard Demon</option>
+<option>Insane Demon</option>
+<option>Extreme Demon</option>
+</select>
+
+<label>Song</label>
+<input placeholder="Song">
+
+<label>YouTube Showcase</label>
+<input placeholder="https://youtube.com/...">
+
+<label>Description</label>
+<textarea rows="5"></textarea>
+
+<a class="btn" href="#">Submit (UI)</a>
+
+</div>
+
+<h2>👤 Login Preview</h2>
+
+<div class="card form">
+
+<label>Username</label>
+<input placeholder="Username">
+
+<label>Password</label>
+<input type="password" placeholder="Password">
+
+<a class="btn" href="#">Login</a>
+
+</div>
+
+<h2>⚙️ Admin Review Preview</h2>
+
+<div class="card">
+
+<h3>Submission #245</h3>
+
+<p><b>Level:</b> Chaos Twilight</p>
+<p><b>Creator:</b> Aetherchrome</p>
+<p><b>Status:</b> Pending Review</p>
+
+<br>
+
+<a class="btn" href="#">Accept</a>
+<a class="btn" href="#" style="background:#555;">Reject</a>
+
+</div>
+
+</div>
+
+<footer>
+© AetherList • Created by Aetherchrome
+</footer>
+
+</body>
+</html>
